@@ -12,14 +12,11 @@ import { TodoForm } from '../../ui/TodoForm';
 import { CreateTodoButton } from '../../ui/CreateTodoButton';
 import { Modal } from '../../ui/Modal';
 import { ChangeAlert } from '../../ui/ChangeAlert';
-import './App.css'
+import '../App.css'
 
 function HomePage() {
 
-  const {
-    states,
-    stateUpdaters,
-  } = useTodos();//useTodos es un hook
+  const {states, stateUpdaters} = useTodos();//useTodos es un hook
 
   const {//propiedades del estado
     error,
@@ -72,6 +69,7 @@ function HomePage() {
             key={todo.text}
             text={todo.text}
             completed={todo.completed}
+            // onEdit={() => completeTodo(todo.text)}
             onComplete={() => completeTodo(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
           />
