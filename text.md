@@ -65,3 +65,22 @@ git checkout master
 
 ## merge de main estando en master
 git merge main
+
+
+###### ###################3
+Para hacer deploy en git hub pages 
+modificar el pakage.json
+
+## colocar el nombre de tu proyecto en 
+  "name": "*38-todo-machine*",
+  "homepage": "https://RodrigoLaime.github.io/*search-movies*"
+
+  "deploy": "gh-pages-clean gh-pages -d build"
+
+## ejecutar 
+nmp run deploy
+
+## luego modificar en pakage.json
+"deploy": "gh-pages -d build"
+## ejecutar 
+nmp run deploy
