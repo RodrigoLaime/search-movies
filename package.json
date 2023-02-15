@@ -1,5 +1,5 @@
 {
-  "name": "37-todo-machine",
+  "name": "38-todo-machine",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -18,7 +18,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages-clean gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -41,5 +41,5 @@
   "devDependencies": {
     "gh-pages": "^5.0.0"
   },
-  "homepage": "https://RodrigoLaime.github.io/React-JuanDC"
+  "homepage": "https://RodrigoLaime.github.io/38-todo-machine"
 }
