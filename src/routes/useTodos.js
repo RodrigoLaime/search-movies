@@ -10,10 +10,9 @@ function useTodos() {
     sincronizeItem: sincronizeTodos,
     loading,
     error,
-  } = useLocalStorage('TODOS_V1', [])//se puede cambiar a v2
+  } = useLocalStorage('TODOS_V2', [])//se puede cambiar a v2
 
   const [searchValue, setSearchValue] = React.useState('');
-  const [openModal, setOpenModal] = React.useState(false);
 
   //para ver cuantos toso tenemos en el array
   const completedTodos = todos.filter(todo => !!todo.completed).length;
@@ -35,24 +34,31 @@ function useTodos() {
   }
 
 
-
   //funcion para editar todos y se guarda
   const addTodo = (text) => {
+    const id = newTodoId(todos);
     //creamos una copioa de todos
     const newTodos = [...todos]
     //crea un nuevo todo incompleta
     newTodos.push({
       completed: false,
       text,
+      id,
     });
     //actualizar estado
     saveTodos(newTodos);
   }
 
+  //obtener el texto del todo
+  const getTodo = (id) => {
+    const todoIndex = todos.findIndex(todo => todo.id === id);
+    return todos[todoIndex]
+  }
+
   //funcion para editar todos
-  const completeTodo = (text) => {
+  const completeTodo = (id) => {
     //buscar el index si todotext es igual al textinput
-    const todoIndex = todos.findIndex(todo => todo.text === text);
+    const todoIndex = todos.findIndex(todo => todo.id === id);
     //creamos una copioa de todos
     const newTodos = [...todos]
     //encontrar la posicion index dentro de la lista de todos y que de ese objeto que nos esta llamando completed es igual a true
@@ -60,24 +66,23 @@ function useTodos() {
     //actualizar estado
     saveTodos(newTodos);
   }
+  //funcion para editar todos
+  const editTodo = (id, newText) => {
+    //buscar el index si todotext es igual al textinput
+    const todoIndex = todos.findIndex(todo => todo.id === id);
+    //creamos una copioa de todos
+    const newTodos = [...todos]
+    //encontrar la posicion index dentro de la lista de todos y que de ese objeto que nos esta llamando completed es igual a true
+    newTodos[todoIndex].text = newText;
+    //actualizar estado
+    saveTodos(newTodos);
+  }
 
-
-  /*   //funcion para Editar todos
-    const editTodo = (text) => {
-      //buscar el index si todotext es igual al textinput
-      const todoIndex = todos.findIndex(todo => todo.text === text);
-      //creamos una copioa de todos
-      const newTodos = [...todos]
-      //en que posicion cortar y cuantas tajadas coratar
-      newTodos.splice(todoIndex, 1)
-      //actualizar estado
-      saveTodos(newTodos);
-    } */
 
   //funcion para Eliminar todos
-  const deleteTodo = (text) => {
+  const deleteTodo = (id) => {
     //buscar el index si todotext es igual al textinput
-    const todoIndex = todos.findIndex(todo => todo.text === text);
+    const todoIndex = todos.findIndex(todo => todo.id === id);
     //creamos una copioa de todos
     const newTodos = [...todos]
     //en que posicion cortar y cuantas tajadas coratar
@@ -95,7 +100,7 @@ function useTodos() {
     completedTodos,
     searchValue,
     searchedTodos,
-    openModal,
+    getTodo,
   };
 
   const stateUpdaters = {//indicar cual es el estado que vamos a compartir en todos los componentes que esta conteniendo
@@ -103,13 +108,24 @@ function useTodos() {
     setSearchValue,
     addTodo,
     completeTodo,
+    editTodo,
     deleteTodo,
-    /*    editTodo, */
-    setOpenModal,
     sincronizeTodos
   };
 
   return { states, stateUpdaters }
+}
+
+//funcion para crear id
+function newTodoId(todoList) {
+  if (!todoList.length) {
+    return 1;
+  }
+  //recorremos la lista creando un nuevo array con map devolviendo el id
+  const idList = todoList.map(todo => todo.id)
+  //busca el numero mas grande del i y le sumamos 1
+  const idMax = Math.max(...idList)
+  return idMax + 1;
 }
 
 export { useTodos };

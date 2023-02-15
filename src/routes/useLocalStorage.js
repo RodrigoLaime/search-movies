@@ -10,24 +10,24 @@ function useLocalStorage(itemName, initialValue) {
   } = state;
 
   //ACTION CREATORS
-  const onError = (error) => dispatch({ 
-    type: actionType.error, 
-    payload: error 
+  const onError = (error) => dispatch({
+    type: actionType.error,
+    payload: error
   })
-  
+
   const onSuccess = (item) => dispatch({
-     type: actionType.success,
-      payload: item
-     })
+    type: actionType.success,
+    payload: item
+  })
 
   const onSave = (item) => dispatch({
-     type: actionType.save,
-      payload: item 
-    })
+    type: actionType.save,
+    payload: item
+  })
 
   const onSincronise = () => dispatch({
-     type: actionType.sincronize,
-    })
+    type: actionType.sincronize,
+  })
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -51,7 +51,7 @@ function useLocalStorage(itemName, initialValue) {
       } catch (error) {
         onError(error)
       }
-    }, 3000);
+    }, 1000);
   }, [sincronizedItem]);
 
 

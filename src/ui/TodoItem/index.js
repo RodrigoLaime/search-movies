@@ -2,6 +2,7 @@ import React from "react";
 import { DeleteIcon } from "../TodoIcon/DeleteIcon";
 import { CompleteIcon } from "../TodoIcon/CompleteIcon";
 import "./TodoItem.css";
+import { EditIcon } from "../TodoIcon/EditIcon";
 
 function TodoItem(props) {
   return (
@@ -10,18 +11,13 @@ function TodoItem(props) {
       <p className={`TodoItem-p ${props.completed && "TodoItem-p--complete"}`}>
         {props.text}
       </p>
-      <span
-        className="Icon Icon-delete"
-        onClick={props.onDelete}
-      >
-        ✖
-      </span>
-      <span
-        className="Icon Icon-delete"
-        onClick={props.onEdit}
-      >
-        ✖
-      </span>
+      <EditIcon
+        onEdit={props.onEdit}
+      />
+      <DeleteIcon
+        onDelete={props.onDelete}
+      />
+
     </li>);
 }
 export { TodoItem };
