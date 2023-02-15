@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/38-todo-machine/static/css/main.438d3f68.css",
-    "main.js": "/38-todo-machine/static/js/main.c446a646.js",
-    "static/media/wallhaven-6kozzl.png": "/38-todo-machine/static/media/wallhaven-6kozzl.71e5271871371102b177.png",
-    "index.html": "/38-todo-machine/index.html",
-    "static/media/delete.svg": "/38-todo-machine/static/media/delete.2df968658f3a5a5e4e6bc3929bcb9ef8.svg",
-    "static/media/check.svg": "/38-todo-machine/static/media/check.8b522babc550faf8863c748614d8dc6b.svg",
-    "static/media/edit.svg": "/38-todo-machine/static/media/edit.fa9b9f529f7a6668cdceb87a7e2c1b16.svg",
-    "main.438d3f68.css.map": "/38-todo-machine/static/css/main.438d3f68.css.map",
-    "main.c446a646.js.map": "/38-todo-machine/static/js/main.c446a646.js.map"
+    "main.css": "/search-movies/static/css/main.19b1a70b.css",
+    "main.js": "/search-movies/static/js/main.c7e5ecfa.js",
+    "static/media/wallhaven-6kozzl.png": "/search-movies/static/media/wallhaven-6kozzl.71e5271871371102b177.png",
+    "index.html": "/search-movies/index.html",
+    "static/media/delete.svg": "/search-movies/static/media/delete.2df968658f3a5a5e4e6bc3929bcb9ef8.svg",
+    "static/media/check.svg": "/search-movies/static/media/check.8b522babc550faf8863c748614d8dc6b.svg",
+    "static/media/edit.svg": "/search-movies/static/media/edit.fa9b9f529f7a6668cdceb87a7e2c1b16.svg",
+    "main.19b1a70b.css.map": "/search-movies/static/css/main.19b1a70b.css.map",
+    "main.c7e5ecfa.js.map": "/search-movies/static/js/main.c7e5ecfa.js.map"
   },
   "entrypoints": [
-    "static/css/main.438d3f68.css",
-    "static/js/main.c446a646.js"
+    "static/css/main.19b1a70b.css",
+    "static/js/main.c7e5ecfa.js"
   ]
 }
