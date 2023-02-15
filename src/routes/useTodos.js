@@ -61,6 +61,19 @@ function useTodos() {
     saveTodos(newTodos);
   }
 
+
+  /*   //funcion para Editar todos
+    const editTodo = (text) => {
+      //buscar el index si todotext es igual al textinput
+      const todoIndex = todos.findIndex(todo => todo.text === text);
+      //creamos una copioa de todos
+      const newTodos = [...todos]
+      //en que posicion cortar y cuantas tajadas coratar
+      newTodos.splice(todoIndex, 1)
+      //actualizar estado
+      saveTodos(newTodos);
+    } */
+
   //funcion para Eliminar todos
   const deleteTodo = (text) => {
     //buscar el index si todotext es igual al textinput
@@ -91,6 +104,7 @@ function useTodos() {
     addTodo,
     completeTodo,
     deleteTodo,
+    /*    editTodo, */
     setOpenModal,
     sincronizeTodos
   };

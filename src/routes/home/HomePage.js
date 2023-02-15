@@ -12,7 +12,7 @@ import { TodoForm } from '../../ui/TodoForm';
 import { CreateTodoButton } from '../../ui/CreateTodoButton';
 import { Modal } from '../../ui/Modal';
 import { ChangeAlert } from '../../ui/ChangeAlert';
-import './App.css'
+import '../App.css'
 
 function HomePage() {
 

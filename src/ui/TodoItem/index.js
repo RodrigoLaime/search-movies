@@ -20,6 +20,12 @@ function TodoItem(props) {
       >
         ✖
       </span>
+      <span
+        className="Icon Icon-delete"
+        onClick={props.onEdit}
+      >
+        ✖
+      </span>
     </li>);
 }
 export { TodoItem };
